@@ -1,0 +1,2 @@
+# Smart-Collage-Attendance-and-Faculty-Management-System
+Student Attendance Management System  A web-based application designed to streamline student attendance tracking, academic record management, and attendance reporting. The system provides dedicated interfaces for administrators, faculty, and students, with features including attendance recording, attendance history, analytics, and report generation
