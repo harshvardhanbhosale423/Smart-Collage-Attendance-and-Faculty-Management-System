@@ -1,0 +1,24 @@
+# Optional: lets Render create everything from this one file
+# (Dashboard -> New -> Blueprint -> pick this repo).
+# You can also skip this file entirely and set things up by hand in the
+# Render dashboard - see README section "Deploying live on the internet".
+services:
+  - type: web
+    name: college-attendance-system
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: FLASK_DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: college-attendance-db
+          property: connectionString
+
+databases:
+  - name: college-attendance-db
+    plan: free
